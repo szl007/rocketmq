@@ -3,6 +3,7 @@ package com.mandala.mq.produce;
 import java.io.*;
 
 /**
+ * 读取文件内容与本项目无关
  * @Author songzhenliang
  * @Date 2023-06-06 16:03
  */
