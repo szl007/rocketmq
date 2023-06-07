@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: my-produce-group
+    #目的地（topic:tag）
+    #topic
+    topic: anran-topic
+    #sync tag(同步消息tag)
+    sync-tag: anran-sync-tags
+    #async tag(异步消息tag)
+    async-tag: anran-async-tags
+    #oneway tag(单向消息tag)
+    oneway-tag: anran-oneway-tags
+
+
+  --根据门诊号或身份证号查询7天内的发票数据
+  select e.INVOICE_NO 结算号,case when  e.BILL_TYPE  ='0' then '挂号' else '收费' end 类型,
+  e.CLINIC_NO 门诊号 ,e.PATI_NAME 姓名 ,e.TOT_COST 总金额,e.PACT_NAME 费别,e.OPER_DATE 收费时间,
+  case when  e.TRANS_TYPE  ='1' then '收' else '退' end 状态 from his_cost_op_invoice e
+  inner join   his_out_pati_reg r on r.clinic_no=e.clinic_no
+  where e.OPER_DATE>SYSDATE -30
+  <#if clinicNo?? and idcardNo??>
+  and (r.CLINIC_NO=${clinicNo} or r.IDCARD_NO=${idcardNo})
+  </#if>
+  <#if clinicNo?? and !idcardNo??>
+  and (r.CLINIC_NO=${clinicNo})
+  </#if>
+  <#if !clinicNo?? and idcardNo??>
+  and (r.IDCARD_NO=${idcardNo})
+  </#if>
