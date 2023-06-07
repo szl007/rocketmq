@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67856c77-b0f5-462e-b8aa-f302fff79d56" name="Changes" comment="" />
+    <list default="true" id="67856c77-b0f5-462e-b8aa-f302fff79d56" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_2_0_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_extension_2_0_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_2_0_23.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mq-produce-server/src/main/java/com/mandala/mq/produce/listener/SendCallBackListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mq-produce-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mq-produce-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mq-produce-server/src/main/java/com/mandala/mq/produce/controller/MqMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mq-produce-server/src/main/java/com/mandala/mq/produce/controller/MqMessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mq-produce-server/src/main/java/com/mandala/mq/produce/model/ResponseMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/mq-produce-server/src/main/java/com/mandala/mq/produce/model/ResponseMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mq-produce-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mq-produce-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mq-produce-server/target/classes/com/mandala/mq/produce/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/mq-produce-server/target/classes/com/mandala/mq/produce/test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,12 +39,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -116,6 +130,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MqPrduceeServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="mq-produce-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mandala.mq.produce.MqPrduceeServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.test" />
@@ -142,8 +163,30 @@
       <workItem from="1684983296885" duration="1499000" />
       <workItem from="1685066905524" duration="5386000" />
       <workItem from="1686038456982" duration="5487000" />
-      <workItem from="1686116330648" duration="27000" />
+      <workItem from="1686116330648" duration="10565000" />
     </task>
+    <task id="LOCAL-00001" summary="rocketmq练习">
+      <created>1686116482651</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686116482651</updated>
+    </task>
+    <task id="LOCAL-00002" summary="rocketmq练习">
+      <created>1686116508443</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686116508443</updated>
+    </task>
+    <task id="LOCAL-00003" summary="rocketmq练习">
+      <created>1686116584129</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686116584129</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,5 +196,7 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="rocketmq练习" />
+    <option name="LAST_COMMIT_MESSAGE" value="rocketmq练习" />
   </component>
 </project>
