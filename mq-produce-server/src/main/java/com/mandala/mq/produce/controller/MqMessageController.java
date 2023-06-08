@@ -6,10 +6,7 @@ import com.mandala.mq.produce.model.OrderStep;
 import com.mandala.mq.produce.model.ResponseMsg;
 import com.mandala.mq.produce.util.ListSplitter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.rocketmq.client.producer.MessageQueueSelector;
-import org.apache.rocketmq.client.producer.SendCallback;
-import org.apache.rocketmq.client.producer.SendResult;
-import org.apache.rocketmq.client.producer.SendStatus;
+import org.apache.rocketmq.client.producer.*;
 import org.apache.rocketmq.common.message.MessageQueue;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.apache.rocketmq.spring.support.RocketMQHeaders;
@@ -169,6 +166,7 @@ public class MqMessageController {
             Message<String> message = MessageBuilder.withPayload(messageStr).setHeader(RocketMQHeaders.KEYS,id).build();
             messages.add(message);
         }
+        // 批量下发消息到broker,不支持消息顺序操作，并且对消息体有大小限制（不超过4M）
         ListSplitter splitter = new ListSplitter(messages, 1024 * 1024 * 4);
         while (splitter.hasNext()){
             List<Message> list = splitter.next();
@@ -178,6 +176,36 @@ public class MqMessageController {
         return ResponseMsg.success();
     }
 
+    /**
+     * sql过滤消息
+     * @return
+     */
+    public ResponseMsg pushSqlMessage(@RequestParam("id") int id){
+        log.info("sql 消息 id: {}", id);
+        List<Message> messages = new ArrayList<>();
+        for (int i =0; i < 10; i++){
+            String myId = id + "" + id;
+            String messageStr = "order id : " + myId;
+            Message<String> message = MessageBuilder.withPayload(messageStr).setHeader(RocketMQHeaders.KEYS, id).setHeader("money", 1).build();
+            messages.add(message);
+        }
+        rocketMQTemplate.syncSend(syncTag, messages);
+        log.info("sql消息 结束 {}", id);
+        return ResponseMsg.success();
+    }
 
+    /**
+     * 事务消息
+     * @param id
+     * @return
+     */
+    public ResponseMsg pushTransactionMessage(@RequestParam("id") int id){
+        String messageStr = "order id :" + id;
+        Message<String> message = MessageBuilder.withPayload(messageStr).setHeader(RocketMQHeaders.KEYS, id).setHeader("money", 10)
+                .setHeader(RocketMQHeaders.TRANSACTION_ID, id).build();
+        TransactionSendResult result = rocketMQTemplate.sendMessageInTransaction(syncTag, message, null);
+        log.info("result : {}", JSONObject.toJSONString(result));
+        return ResponseMsg.success();
+    }
 }
 

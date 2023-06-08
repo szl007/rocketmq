@@ -1,5 +1,6 @@
 package com.mandala.mq.produce.listener;
 
+import com.alibaba.fastjson.JSONObject;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendCallback;
@@ -21,11 +22,11 @@ public class SendCallBackListener implements SendCallback {
 
     @Override
     public void onSuccess(SendResult sendResult) {
-
+        log.info("onSuccess result: {}", JSONObject.toJSONString(sendResult));
     }
 
     @Override
     public void onException(Throwable throwable) {
-
+        log.info("onException : {}", throwable);
     }
 }
