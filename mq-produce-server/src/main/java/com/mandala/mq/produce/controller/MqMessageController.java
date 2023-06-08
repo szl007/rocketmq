@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.mandala.mq.produce.listener.SendCallBackListener;
 import com.mandala.mq.produce.model.OrderStep;
 import com.mandala.mq.produce.model.ResponseMsg;
+import com.mandala.mq.produce.util.ListSplitter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.MessageQueueSelector;
 import org.apache.rocketmq.client.producer.SendCallback;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -151,6 +153,29 @@ public class MqMessageController {
             return ResponseMsg.success(result);
         }
         return ResponseMsg.fail();
+    }
+
+    /**
+     * 同时发送10条消息  批量操作
+     * @param id
+     * @return
+     */
+    public ResponseMsg pushBatchMessage(@RequestParam("id") int id){
+        log.info("批量发送消息 id: {}", id);
+        List<Message> messages = new ArrayList<>();
+        for(int i =0; i < 3; i++){
+            String myId = id + "" +i;
+            String messageStr = "order id " + id;
+            Message<String> message = MessageBuilder.withPayload(messageStr).setHeader(RocketMQHeaders.KEYS,id).build();
+            messages.add(message);
+        }
+        ListSplitter splitter = new ListSplitter(messages, 1024 * 1024 * 4);
+        while (splitter.hasNext()){
+            List<Message> list = splitter.next();
+            rocketMQTemplate.syncSend(syncTag, list);
+        }
+        log.info("批量发送消息 结束 {}", id);
+        return ResponseMsg.success();
     }
 
 
