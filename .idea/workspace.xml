@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67856c77-b0f5-462e-b8aa-f302fff79d56" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_2_0_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_extension_2_0_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_2_0_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mq-produce-server/src/main/java/com/mandala/mq/produce/listener/SendCallBackListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mq-produce-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mq-produce-server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mq-produce-server/src/main/java/com/mandala/mq/produce/controller/MqMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mq-produce-server/src/main/java/com/mandala/mq/produce/controller/MqMessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mq-produce-server/src/main/java/com/mandala/mq/produce/model/ResponseMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/mq-produce-server/src/main/java/com/mandala/mq/produce/model/ResponseMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mq-produce-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mq-produce-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mq-produce-server/target/classes/com/mandala/mq/produce/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/mq-produce-server/target/classes/com/mandala/mq/produce/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +22,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="ProjectId" id="2PuPr2fXpBiu1okx0TePvlPePD9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -55,7 +49,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Application.test">
@@ -163,7 +157,8 @@
       <workItem from="1684983296885" duration="1499000" />
       <workItem from="1685066905524" duration="5386000" />
       <workItem from="1686038456982" duration="5487000" />
-      <workItem from="1686116330648" duration="10565000" />
+      <workItem from="1686116330648" duration="15405000" />
+      <workItem from="1686202669269" duration="640000" />
     </task>
     <task id="LOCAL-00001" summary="rocketmq练习">
       <created>1686116482651</created>
@@ -186,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686116584129</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="rocketmq练习">
+      <created>1686129308719</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686129308719</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,5 +200,9 @@
     </ignored-roots>
     <MESSAGE value="rocketmq练习" />
     <option name="LAST_COMMIT_MESSAGE" value="rocketmq练习" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
